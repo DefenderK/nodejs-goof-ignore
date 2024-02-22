@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file
 exclude:
  global:
-   - db.js 
+   - mongoose-db.js 
    - app.js 
