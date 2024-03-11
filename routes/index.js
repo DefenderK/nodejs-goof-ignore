@@ -15,6 +15,14 @@ var validator = require('validator');
 var fileType = require('file-type');
 var AdmZip = require('adm-zip');
 var fs = require('fs');
+var RateLimit = require('express-rate-limit');
+var limiter = new RateLimit({
+  windowMs: parseInt(process.env.WINDOW_MS, 10),
+  max: parseInt(process.env.MAX_IP_REQUESTS, 10),
+  delayMs:parseInt(process.env.DELAY_MS, 10),
+  headers: true
+});
+app.user(limiter);
 
 // prototype-pollution
 var _ = require('lodash');
@@ -35,7 +43,7 @@ exports.index = function (req, res, next) {
 };
 
 // Insert new vulnerable code:
-/*
+
 
 exports.loginHandler = function (req, res, next) {
   if (validator.isEmail(req.body.username)) {
@@ -69,7 +77,7 @@ if (validator.isEmail(req.body.username)) {
 } else {
   return res.status(401).send()
 };
-*/
+
 
 function adminLoginSuccess(redirectPage, session, username, res) {
   session.loggedIn = 1
@@ -208,7 +216,7 @@ exports.create = function (req, res, next) {
 };
 
 // Insert new vulnerable code:
-/*
+
 exports.destroy = function (req, res, next) {
   Todo.findById(req.params.id, function (err, todo) {
 
@@ -249,7 +257,7 @@ exports.update = function (req, res, next) {
     });
   });
 };
-*/
+
 
 // ** express turns the cookie key to lowercase **
 exports.current_user = function (req, res, next) {
