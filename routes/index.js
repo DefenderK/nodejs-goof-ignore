@@ -70,8 +70,9 @@ if (validator.isEmail(req.body.username)) {
   return res.status(401).send()
 };
 
+
 // Fixed code: validator.escape() is used to sanitize the input parameters (username and password) before using them in the database query.
-/*
+
 exports.loginHandler = function (req, res, next) {
   // Validate if the username is in email format
   if (validator.isEmail(req.body.username)) {
@@ -99,7 +100,7 @@ exports.loginHandler = function (req, res, next) {
     return res.status(401).send("Unauthorized");
   }
 };
-*/
+
 
 function adminLoginSuccess(redirectPage, session, username, res) {
   session.loggedIn = 1
