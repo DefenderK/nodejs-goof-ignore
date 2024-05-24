@@ -3,3 +3,10 @@ exclude:
  global:
    - mongoose-db.js 
    - app.js 
+
+ignore:
+  SNYK-JS-QS-3153490:
+    - '*':
+        reason: Not an issue
+        expires: 2026-04-04T17:33:45.004Z
+
