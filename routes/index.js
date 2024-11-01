@@ -34,7 +34,7 @@ exports.index = function (req, res, next) {
     });
 };
 
-// Insert new vulnerable code:
+// Vulnerable code:
 
 
 exports.loginHandler = function (req, res, next) {
