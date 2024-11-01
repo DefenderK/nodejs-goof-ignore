@@ -36,7 +36,7 @@ exports.index = function (req, res, next) {
 
 // Insert new vulnerable code:
 
-/*
+
 exports.loginHandler = function (req, res, next) {
   if (validator.isEmail(req.body.username)) {
     User.find({ username: req.body.username, password: req.body.password }, function (err, users) {
@@ -69,10 +69,9 @@ if (validator.isEmail(req.body.username)) {
 } else {
   return res.status(401).send()
 };
-*/
 
 // Fixed code: validator.escape() is used to sanitize the input parameters (username and password) before using them in the database query.
-
+/*
 exports.loginHandler = function (req, res, next) {
   // Validate if the username is in email format
   if (validator.isEmail(req.body.username)) {
@@ -100,7 +99,7 @@ exports.loginHandler = function (req, res, next) {
     return res.status(401).send("Unauthorized");
   }
 };
-
+*/
 
 function adminLoginSuccess(redirectPage, session, username, res) {
   session.loggedIn = 1
@@ -108,8 +107,8 @@ function adminLoginSuccess(redirectPage, session, username, res) {
   // Log the login action for audit
   console.log(`User logged in: ${username}`)
 
-  if (redirectPage && validator.isURL(redirectPage)) {
-      return res.redirect(302, redirectPage)
+  if (redirectPage) {
+      return res.redirect(redirectPage)
   } else {
       return res.redirect('/admin')
   }
@@ -239,7 +238,7 @@ exports.create = function (req, res, next) {
 };
 
 // Insert new vulnerable code:
-
+/*
 exports.destroy = function (req, res, next) {
   Todo.findById(req.params.id, function (err, todo) {
 
@@ -280,7 +279,7 @@ exports.update = function (req, res, next) {
     });
   });
 };
-
+*/
 
 // ** express turns the cookie key to lowercase **
 exports.current_user = function (req, res, next) {
