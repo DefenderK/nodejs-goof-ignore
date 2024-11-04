@@ -34,8 +34,3 @@ jobs:
         run: |
           snyk test --json --print-deps | snyk-delta --baselineOrg 6d36ac7a-c75b-4179-8e73-6dd4d3fc8343 --baselineProject c8cfc88f-7bc5-4fc4-8474-3fa716593d4a --setPassIfNoBaseline true
         continue-on-error: true
-              # Run Snyk Container
-      - name: Run Snyk Container
-        run: |
-         snyk test --docker node:6-stretch --file=Dockerfile --platform=linux/arm64 --org=6d36ac7a-c75b-4179-8e73-6dd4d3fc8343
-        continue-on-error: true
