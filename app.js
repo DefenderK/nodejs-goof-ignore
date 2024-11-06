@@ -16,6 +16,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session')
 var methodOverride = require('method-override');
 var logger = require('morgan');
+var csrf = require('csurf');
 var errorHandler = require('errorhandler');
 var optional = require('optional');
 var marked = require('marked');
@@ -79,6 +80,7 @@ app.locals.marked = marked;
 if (app.get('env') == 'development') {
   app.use(errorHandler());
 }
+app.use(csrf());
 // Introduce Token
 /*
 var token = 'SECRET_TOKEN_f8ed84e8f41e4146403dd4a6bbcea5e418d23a9';
