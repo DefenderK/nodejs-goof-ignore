@@ -23,6 +23,7 @@ jobs:
         run: |
           sudo npm install -g snyk
           sudo npm install -g snyk-delta
+          sudo npm install -g snyk-filter
           snyk auth ${SNYK_TOKEN}
       # Run Snyk Code
       - name: Run Snyk Code
