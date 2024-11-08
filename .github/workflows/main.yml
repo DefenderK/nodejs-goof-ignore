@@ -35,8 +35,8 @@ jobs:
         run: |
           snyk test --json --print-deps | snyk-delta --baselineOrg 6d36ac7a-c75b-4179-8e73-6dd4d3fc8343 --baselineProject bf085e07-0ca2-4cb4-b345-92ad4178b1e2 --setPassIfNoBaseline true
         continue-on-error: true
-      - name: Run Snyk OS Delta
+      - name: Run Snyk OS CVSS 9 or >
         run: |
-          snyk test --json | snyk-filter -f /filters/example-cvss-9-or-above.yml --Org=6d36ac7a-c75b-4179-8e73-6dd4d3fc8343
+          snyk test --json | snyk-filter -f ${{ github.workspace }}/filters/example-cvss-9-or-above.yml --Org=6d36ac7a-c75b-4179-8e73-6dd4d3fc8343
         continue-on-error: true
 
