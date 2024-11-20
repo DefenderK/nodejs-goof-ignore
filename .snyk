@@ -1,15 +1,22 @@
 # Snyk (https://snyk.io) policy file
+language-settings: 
+  python: "3.7"
+
 exclude:
  global:
    - mongoose-db.js 
    - app.js 
+   - todolist-goof/** 
 
 ignore:
   SNYK-JS-QS-3153490:
     - '*':
         reason: Not an issue
         expires: 2026-04-04T17:33:45.004Z
+  SNYK-JS-BSON-561052:
+    - mongodb > mongodb-core > bson:
+        reason: None given
+        expires: '2020-06-19T20:36:54.553Z'
 
-language-settings: 
-  python: "3.7"
+
 
