@@ -1,22 +1,16 @@
-# Snyk (https://snyk.io) policy file
-language-settings: 
-  python: "3.7"
-
-exclude:
- global:
-   - mongoose-db.js 
-   - app.js 
-   - todolist-goof/** 
-
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
-  SNYK-JS-QS-3153490:
+  'npm:adm-zip:20180415':
     - '*':
-        reason: Not an issue
-        expires: 2026-04-04T17:33:45.004Z
-  SNYK-JS-BSON-561052:
-    - mongodb > mongodb-core > bson:
-        reason: None given
-        expires: '2026-06-19T20:36:54.553Z'
-
-
+        reason: Not an issue for our environment!
+        expires: 2025-12-20T15:39:49.338Z
+        created: 2024-11-20T15:39:49.343Z
+patch: {}
+exclude:
+  global:
+    - app.js
+    - db.js
+    - routes/**
 
