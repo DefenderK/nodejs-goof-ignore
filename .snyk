@@ -10,3 +10,6 @@ ignore:
         reason: Not an issue
         expires: 2026-04-04T17:33:45.004Z
 
+language-settings: 
+  python: "3.7"
+
