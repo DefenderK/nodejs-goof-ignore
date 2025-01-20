@@ -33,7 +33,7 @@ jobs:
       # Run Snyk OS
       - name: Run Snyk OS Delta
         run: |
-          snyk test --json --print-deps | snyk-delta --baselineOrg 6d36ac7a-c75b-4179-8e73-6dd4d3fc8343 --baselineProject 17a2bb65-9e50-4277-9f0e-612006e9347a --setPassIfNoBaseline true
+          snyk test --json --print-deps | snyk-delta --baselineOrg 6d36ac7a-c75b-4179-8e73-6dd4d3fc8343 --baselineProject 17a2bb65-9e50-4277-9f0e-612006e9347a --setPassIfNoBaseline true -d
         continue-on-error: true
       - name: Run Snyk OS CVSS 9 or >
         run: |
