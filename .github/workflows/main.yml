@@ -1,7 +1,9 @@
 name: "Example workflow for Node using Snyk"
-on: push
-branches:
-    - 'demo*'  # Include any branch starting with demo
+
+on: 
+    push:
+        branches:
+            - 'demo*'  # Include any branch starting with demo
 jobs:
   security:
     runs-on: ubuntu-latest
